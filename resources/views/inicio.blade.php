@@ -7,7 +7,7 @@
 
 @section('display_new','d-none')  @section('link_edit', '') 
 @section('display_edit', 'd-none')    @section('link_new', '')
-@section('display_trash','d-none')    @section('link_trash')
+@section('display_trash','d-none')    @section('link_trash') 
 {{--   <div class="row">
   	<div class="col-md-6 col-lg-3">
   		<div class="widget-small primary coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
