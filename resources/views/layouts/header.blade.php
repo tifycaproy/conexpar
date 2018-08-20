@@ -35,6 +35,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
@@ -45,7 +46,7 @@
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
         <li class="app-search">
-          <h4>Conexpar</h4>
+          
         </li>
         <!--Notification Menu-->
         <!-- User Menu-->
@@ -64,81 +65,42 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       <div class="app-sidebar__user">
-        <img class="app-sidebar__user-avatar" style="width: 60px; height: 60px" src="{{ asset('img/avatar.gif') }}" alt="User Image">
-        <div>
-          <p class="app-sidebar__user-name">{{ $nombre }}</p>
-          
-        
-          
+
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="col-12 text-center p-0">
+            <img class="app-sidebar__user-avatar avatar img-fluid"  src="{{ asset('img/logo2.png') }}" alt="User Image">
+          </div>
+          <div class="col-12 text-center mt-3">
+            <p class="app-sidebar__user-name">{{ $nombre }}</p>
+            <i class="app-sidebar__user-name">Perfil</i>
+          </div>
         </div>
-      </div>
-      <ul class="app-menu">
-        <li><a class="app-menu__item active" href="{{ route('home') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Inicio</span></a></li>
-       
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Configurar</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-           @if ($perfil==1 || $perfil==2)  
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Cargos</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Categorias</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Divisas</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Estados</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Gastos</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Tipo Clientes</a></li>
-          @endif
-          </ul>
-        </li>
-
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Registro</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Clientes</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Proveedores</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Productos</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Repartidores</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Inventario</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Gastos</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Faltantes</a></li>
-          </ul>
-        </li>
-
         
-        @if ($perfil==1 || $perfil==2) 
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Procesar</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Ventas</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Pedidos</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Cargas</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Provisorio</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Remitos</a></li>            
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Descompuestos</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Consignación</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Confirmación</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Logística</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Monitoreo</a></li>
-          </ul>
-        </li>
-
-
-        @endif
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Generar</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Inventario</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Estadístico</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Seguridad</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Usuarios</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Perfiles</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Auditoria</a></li>
-          </ul>
-        </li>
-
-      </ul>
+      </div>
+      @include('layouts.menu')
     </aside>
     <main class="app-content">
+      <div class="app-title">
+        <div>
+          {{-- TITULO DE CABECERA DE SECCION --}}
+          <h1><i class="fa @yield('icono_titulo')"></i> @yield('titulo')</h1>
+          <p>@yield('descripcion')</p>
+          {{-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ --}}
+        </div>
+        
+        <ul class="app-breadcrumb breadcrumb">
+
+          {{-- ACCIONES  --}}
+          <div class="btn-group">
+            <a class="btn btn-primary @yield('display_new')" href="@yield('link_new')"><i class="fa fa-lg fa-plus"></i></a>
+            <a class="btn btn-primary @yield('display_edit')" href="@yield('link_edit')"><i class="fa fa-lg fa-edit"></i></a>
+            <a class="btn btn-primary @yield('display_trash')" href="@yield('link_trash')"><i class="fa fa-lg fa-trash"></i></a>
+          </div>
+          {{-- \\\\\\\\\ --}}
+
+        </ul>
+
+      </div>
       @yield('content')
       <div class="row">
       </div>

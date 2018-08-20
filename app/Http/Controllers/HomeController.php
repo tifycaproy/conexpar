@@ -33,7 +33,7 @@ class HomeController extends Controller
               ->first();*/
 
 
-        return view('layouts.inicio');
+        return view('inicio');
         
     }
 }

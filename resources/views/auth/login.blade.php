@@ -17,15 +17,17 @@
 	<section class="login-content">
 		<div class="text-center">
 			
-			<img src="" width="20%">
-			<h3 class="py-4">ERP<br>Gestión Administrativa</h3>
-
+			<img src="{{ asset('img/logo2.png') }}" width="50%" class="mb-5">
+		
 		</div>
 		<div class="login-box">
+			
+
 			<form class="login-form" method="POST" action="{{ route('login') }}">
+				<h3 class="text-center mb-3">ERP<br>Gestión Administrativa</h3>
 				{{ csrf_field() }}
 				<div class="form-group" {{ $errors->has('email') ? ' has-error' : '' }}>
-					<label class="control-label">Usuario(E-mail Intranet)</label>
+					<label class="control-label">Usuario</label>
 					<input class="form-control" type="email" id="email" name="email" value="{{ old('email') }}" required autofocus placeholder="E-mail">
 					@if ($errors->has('email'))
 					<span class="help-block">
